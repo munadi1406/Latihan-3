@@ -108,14 +108,18 @@ public class Login extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-       if(TFUsername.getText().equals("admin") && (String.valueOf(TFPassword.getPassword()).equals("admin"))){
-           new PenghitungJumlahHari().setVisible(true);
-           dispose();
+       if(TFUsername.getText().equals("") || TFPassword.getText().equals("")){
+           JOptionPane.showMessageDialog(null,"Inputan Masih Kosong");
        }else{
-           JOptionPane.showMessageDialog(null,TFUsername.getText()+", Password Anda Salah","Pesan Kesalaha", JOptionPane.ERROR_MESSAGE);
-           TFUsername.setText("");
-           TFPassword.setText("");
-           TFUsername.requestFocus();
+            if(TFUsername.getText().equals("admin") && (String.valueOf(TFPassword.getPassword()).equals("admin"))){
+                new PenghitungJumlahHari().setVisible(true);
+                dispose();
+            }else{
+                JOptionPane.showMessageDialog(null,TFUsername.getText()+", Password Anda Salah","Pesan Kesalaha", JOptionPane.ERROR_MESSAGE);
+                TFUsername.setText("");
+                TFPassword.setText("");
+                TFUsername.requestFocus();
+            }
        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
